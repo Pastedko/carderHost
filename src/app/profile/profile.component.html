@@ -1,0 +1,73 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-sm-6 col-lg-3">
+                <div class="thumbnail text-center photo_view_postion_b">
+                    <img src="{{user.profilePicture}}"
+                        alt="stack photo" class="img">
+                </div>
+            </div>
+            <div class="col-md-9 col-xs-12 col-sm-6 col-lg-9">
+                <div class="" style="border-bottom:1px solid black">
+                    <h2>{{user.username}}</h2>
+                </div>
+                <hr>
+                <div class="col-md-8">
+                    <ul class=" details">
+                        <li>
+                            <p><span class="glyphicon glyphicon-envelope one"
+                                    style="width:50px;"></span>{{user.email}}</p>
+                        </li>
+                        <li>
+                            <p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>{{user.city}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-sm-5 col-xs-6 tital ">Birthday:</div>
+                    <div class="col-sm-7 col-xs-6 ">{{user.birthday|date}}</div>
+                    <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+                    <div class="col-sm-5 col-xs-6 tital ">Gender: </div>
+                    <div class="col-sm-7 col-xs-6 ">{{user.gender}}</div>
+                    <div class="col-sm-5 col-xs-6 tital ">Wins: </div>
+                    <div class="col-sm-7 col-xs-6 ">{{user.wins}}</div>
+                    <div class="col-sm-5 col-xs-6 tital ">Losses: </div>
+                    <div class="col-sm-7 col-xs-6 ">{{user.losses}}</div>
+                    <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+                    <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+                    <button (click)="editProfile()">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="form-group" style="border-bottom:1px solid black">
+                        <h2>MATCH HISTORY</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="row">
+            <li *ngFor="let game of games,index as index" class="row border">
+                <div class="col-md-4 car-image-block">
+                    <a><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Belote-exemple9-9.jpg/800px-Belote-exemple9-9.jpg " width="400px" height="300px"></a>
+                </div>
+                <div class="col-md-8 card-body ">
+                    <h3>{{game.name}} - {{results[index]}} {{game.score[0]}} - {{game.score[1]}}</h3>
+                    <ul >
+                        <li *ngFor="let player of players[index],index as index" class="list-inline-item">Player{{index+1}}: {{player}}</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>

@@ -1,0 +1,18 @@
+<h1 class="heading">{{game.name}}</h1>
+
+<ul class="team1">
+    <h1>Team 1</h1>
+    <li>{{team1[0]}}</li>
+    <li>{{team1[1]}}</li>
+    <button (click)="changeTeam(1)">Join Team 1</button>
+</ul>
+<ul class="team2">
+    <h1>Team 2</h1>
+    <li>{{team2[0]}}</li>
+    <li>{{team2[1]}}</li>
+    <button (click)="changeTeam(2)">Join Team 2</button>
+</ul>
+<div class="buttons">
+<button (click)="leaveLobby()">Leave</button>
+<button [disabled]="!isOwner"  (click)="startGame()">Start game</button>
+</div>

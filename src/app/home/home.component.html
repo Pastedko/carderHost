@@ -1,0 +1,44 @@
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<div class="cars-horizon" scrolling="auto">
+    
+    <div  *ngIf="games.length==0">
+        <p>No games found</p>
+    </div>
+    <div *ngIf="games.length!=0" class="container">
+        <div class="row">
+            <div *ngFor="let game of games, let i =index" class="col-md-9">
+                <div class="row py-2">
+                   <div class="col-md-7 car-image-block">
+                        <h3> </h3>
+                    </div>
+               
+                </div>
+                
+                <div class="row border">
+                    
+                    <div class="col-md-4 car-image-block">
+                        <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Belote-exemple9-9.jpg/800px-Belote-exemple9-9.jpg "></a>
+                    </div>
+                    <div class="col-md-8 card-body ">
+                        <h3>{{game.name}}</h3> 
+                        
+                        <ul class="list-inline">
+                            <li class="list-inline-item">Current players: {{game.players.length}}/4</li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-danger" (click)="join(i)">Join game</button>
+                    </div>
+                            
+        </div>
+        
+              
+                
+            </div>
+        </div>
+        
+    </div>
+</div>

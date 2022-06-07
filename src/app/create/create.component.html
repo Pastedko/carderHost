@@ -1,0 +1,44 @@
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="login-form mx-auto d-block w-100">
+		<div class="page-header text-center">
+			<h1>Create a lobby</h1>
+		</div>
+			<div class="form-group">
+				<div class="control-label">
+					<label   id="name"  id="username-lbl" for="name" class="required invalid">Name</label>
+				</div>
+				<div class="controls">
+                    <input [(ngModel)]="createData.name" [ngModelOptions]="{standalone: true}" name="name" id="username" value="" class="validate-username required form-control invalid" size="25" required="required" aria-required="true" autofocus="" aria-invalid="true" type="text">
+				</div>
+			</div>
+            
+            <div class="form-group">
+                <div class="control-label">
+                    <label id="password-lbl" for="password" >Password</label>
+                </div>
+            </div>
+            <div class="controls">
+                <input [(ngModel)]="createData.password" [ngModelOptions]="{standalone: true}" name="password" id="password" value="" class="validate-password required form-control" size="25" maxlength="99"  aria-required="true" type="password"  [disabled]="!chkEnable.checked">
+                </div>
+
+            <div class="form-check form-group d-flex justify-content-end">
+                <label  class="form-check-label"><input #chkEnable ngModel type="checkbox" class="form-check-input"> Enable Password</label>
+            </div>
+
+
+			<div class="d-flex justify-content-between">
+				<div class="form-group d-flex justify-content-start">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary" (click)="createLobby()">Create</button>
+					</div>
+				</div>
+
+			</div>
+			<input name="return" value="" type="hidden"><input name="7c519d6abc4458bded19328f936cce5a" value="1" type="hidden">
+	</div>
+</div>
