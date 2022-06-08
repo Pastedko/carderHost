@@ -13,18 +13,26 @@ socketConnection(server);
 
 start();
 
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+}
 async function start(){
     app.use(cors());
     app.use(express.json())
+    app.use(requireHTTPS);
+    app.use(express.static('./dist/<name-on-package.json>'));
     epxressConfig(app);
     await databaseConfig();
     routesConfig(app)
 
-    app.get('/',(req,res)=>{
-        console.log(req.session);
-        res.render('home',{layout:false})
-
-    })
-    server.listen(3000,()=>console.log('Server running on port 3000.'))
+    app.get('/*', function(req, res) {
+        res.sendFile('index.html', {root: 'dist/<name-on-package.json>/'}
+      );
+      });
+    server.listen(process.env.PORT||8080,()=>console.log('Server running on port 3000.'))
 }
 module.exports={app}
