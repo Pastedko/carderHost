@@ -1,0 +1,142 @@
+
+    <div *ngIf="hasFinished==true" class="gameEnded">
+      <img *ngIf="win" src="https://i.pinimg.com/originals/58/68/4f/58684ffbeda73cbd60b6148345692ef6.png">
+      <img *ngIf="loss" src="https://art.pixilart.com/b7e9ddecbc906bc.png">
+      <button (click)="continue()">Continue</button>
+    </div>
+  <div *ngIf="hasFinished==false" class="playingTable">
+      <div class="scoreBoard">
+        <p>Current call: {{myCalls[highestCall]}}</p>
+        <p>We | You</p>
+        <p>{{team1Score}}:{{team2Score}}</p>
+      </div>
+
+      <p *ngIf="call!=-1">{{call}}</p>
+      <ul *ngIf="premiumsAllowed" class="callBtns">
+          <li>
+          <button (click)="callPremium(0)">Tierce</button>
+        </li>
+        <li>
+          <button (click)="callPremium(1)">Quarte</button>
+        </li>
+        <li>
+          <button (click)="callPremium(2)">Quint</button>
+        </li>
+        <li>
+          <button (click)="callPremium(3)">Square</button>
+        </li>
+      </ul>
+      <div class="playedCards">
+        <div class="playingCards simpleCards">
+            <ul class="table">
+                <li *ngFor="let card of playedCards;index as i">
+                    <div (click)="playCard(i)" [class]="card.name" class="card">
+                        <span class="rank">{{card.face}}</span>
+                        <span class="suit">{{card.suit}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+      </div>
+
+      <div *ngIf="scoreScreen!=null" class="afterGame">
+        <table>
+          <tr>
+            <th colspan="3">{{myCalls[scoreScreen["contract"]]}}</th></tr>
+        <tr>
+          <th></th>
+          <th>We</th>
+          <th>You</th>
+        </tr>
+        <tr>
+          <th>Belots</th>
+          <td>{{scoreScreen["team1"]["belots"]}}</td>
+          <td>{{scoreScreen["team2"]["belots"]}}</td>
+        </tr>
+        <tr>
+          <th>Premiums</th>
+         <td>{{scoreScreen["team1"]["premium"]}}</td>
+         <td>{{scoreScreen["team2"]["premium"]}}</td>
+        </tr>
+        <tr>
+          <th>Points</th>
+         <td>{{scoreScreen["team1"]["points"]}}</td>
+         <td>{{scoreScreen["team2"]["points"]}}</td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td>{{scoreScreen["team1"]["total"]}}</td>
+          <td>{{scoreScreen["team2"]["total"]}}</td>
+        </tr>
+      </table>
+      </div>
+
+
+
+      <picture  [style.border-color]="turn ? 'yellow':'red'" class="userPicture">
+        <img src="{{pfp[0]}}" alt="Flowers" style="width: 142px; height: 142px;">
+      </picture>
+      <p class="player1Name">{{names[0]}}</p>
+
+      <div *ngIf="premiumsCalled[0]" class="speech-bubble1">
+        <p>{{premiumsCalled[0]}}</p>
+      </div>
+
+      <picture  [style.border-color]="positions[1][2] ? 'yellow':'red'" class="player2Picture">
+        <img src="{{pfp[1]}}" alt="Flowers" style="width: 142px; height: 142px;">
+      </picture>
+      <p class="player2Name">{{names[1]}}</p>
+      <div *ngIf="premiumsCalled[1]" class="speech-bubble2">
+        <p>{{premiumsCalled[1]}}</p>
+      </div>
+
+
+      <picture  [style.border-color]="positions[2][2] ? 'yellow':'red'" class="player3Picture">
+        <img src="{{pfp[2]}}" alt="Flowers" style="width: 142px; height: 142px;">
+      </picture>
+      <p class="player3Name">{{names[2]}}</p>
+      <div *ngIf="premiumsCalled[2]" class="speech-bubble3">
+        <p>{{premiumsCalled[2]}}</p>
+      </div>
+
+
+      <picture  [style.border-color]="positions[3][2] ? 'yellow':'red'" class="player4Picture">
+        <img src="{{pfp[3]}}" alt="Flowers" style="width: 142px; height: 142px;">
+      </picture>
+      <p class="player4Name">{{names[3]}}</p>
+      <div *ngIf="premiumsCalled[3]" class="speech-bubble4">
+        <p>{{premiumsCalled[3]}}</p>
+      </div>
+
+
+
+
+      <div [style.display]="callActive&&scoreScreen==null ? 'inline-block':'none'"  class="calls" #calls>
+        <table>
+        <tr>
+          <button style="width: 100px;" [disabled]="highestCall>=5" (click)="makeCall(5)"> All trumps </button> 
+          <button style="width: 100px;" [disabled]="highestCall>=2" (click)="makeCall(2)"> Hearts </button>
+        </tr>
+       <tr><button style="width: 100px;" [disabled]="highestCall>=4" (click)="makeCall(4)"> No trumps </button>
+       <button style="width: 100px;" [disabled]="highestCall>=1" (click)="makeCall(1)"> Diamonds </button>
+      </tr> 
+        <button style="width: 100px;" [disabled]="highestCall>=3" (click)="makeCall(3)"> Spades </button>
+        <button style="width: 100px;" [disabled]="highestCall>=0" (click)="makeCall(0)"> Clubs </button>
+       <tr>
+         <button style="width: 100px;" (click)="makeCall(7)"> Pass </button></tr> 
+      </table>
+        <!-- <button (click)="makeCall(6)"> Double </button> -->
+      </div>
+   <div class="playerCards">
+        <div class="playingCards simpleCards">
+            <ul class="hand">
+                <li *ngFor="let card of hand;index as i">
+                    <a (click)="playCard(i)" [class]="card.name" class="card">
+                        <span class="rank">{{card.face}}</span>
+                        <span class="suit">{{card.suit}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
