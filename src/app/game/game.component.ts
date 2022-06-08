@@ -663,7 +663,7 @@ export class GameComponent implements OnInit {
     if(this.player.profilePicture!=null){
       this.pfp.push(this.player.profilePicture);
     }
-    else this.pfp.push("http://localhost:3000/uploads/guest-user-250x250.jpg");
+    else this.pfp.push("/uploads/guest-user-250x250.jpg");
     if(this.player.username!=undefined){
       this.names.push(this.player.username);
     }
@@ -679,7 +679,7 @@ export class GameComponent implements OnInit {
       if(this.game.players[index][0].profilePicture!=null){
         this.pfp.push(this.game.players[index][0].profilePicture);
       }
-      else this.pfp.push("http://localhost:3000/uploads/guest-user-250x250.jpg")
+      else this.pfp.push("/uploads/guest-user-250x250.jpg")
       if(this.game.players[index][0].username!=undefined){
         this.names.push(this.game.players[index][0].username);
       }
@@ -695,7 +695,7 @@ export class GameComponent implements OnInit {
         if(this.game.players[index][0].profilePicture!=null){
           this.pfp.push(this.game.players[index][0].profilePicture);
         }
-        else this.pfp.push("http://localhost:3000/uploads/guest-user-250x250.jpg")
+        else this.pfp.push("/uploads/guest-user-250x250.jpg")
         if(this.game.players[index][0].username!=undefined){
           this.names.push(this.game.players[index][0].username);
         }
@@ -710,7 +710,7 @@ export class GameComponent implements OnInit {
         if(this.game.players[index][0].profilePicture!=null){
           this.pfp.push(this.game.players[index][0].profilePicture);
         }
-        else this.pfp.push("http://localhost:3000/uploads/guest-user-250x250.jpg")
+        else this.pfp.push("/uploads/guest-user-250x250.jpg")
         if(this.game.players[index][0].username!=undefined){
           this.names.push(this.game.players[index][0].username);
         }

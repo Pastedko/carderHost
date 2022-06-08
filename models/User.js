@@ -7,7 +7,7 @@ const userSchema=new Schema({
     username:{type:String,required:true},
     email:{type:String,required:true},
     hashedPassword:{type:String,required:true},
-    profilePicture:{type:String,default:"http://localhost:3000/uploads/guest-user-250x250.jpg"},
+    profilePicture:{type:String,default:"/uploads/guest-user-250x250.jpg"},
     currentGame:{type:ObjectId,ref:"Game",default:null},
     allGames:{type:[ObjectId],ref:"Game",default:[]},
     gender:{type:String,default:""},

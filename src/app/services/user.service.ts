@@ -12,18 +12,18 @@ import { User } from '../user';
 export class UserService {
 
   constructor(private http:HttpClient,private router:Router,private socket:Socket) { }
-  private _createUrl="http://localhost:3000/create";
-  private _getGamesUrl="http://localhost:3000/getAll";
-  private _getGameUrl="http://localhost:3000/getGame/";
-  private _joingGameUrl="http://localhost:3000/join/";
-  private _getUsernameUrl="http://localhost:3000/getUser/";
-  private _getGuestUrl="http://localhost:3000/getGuest/";
-  private _leaveGameUrl="http://localhost:3000/leaveGame/";
-  private _changeTeamUrl="http://localhost:3000/change/";
-  private _updateProfile="http://localhost:3000/updateWithPicture";
-  private _updateProfile2="http://localhost:3000/updateWithoutPicture";
-  private _getPicure="http://localhost:3000/getPicture";
-  private _removePicture="http://localhost:3000/removePicture"
+  private _createUrl="/create";
+  private _getGamesUrl="/getAll";
+  private _getGameUrl="/getGame/";
+  private _joingGameUrl="/join/";
+  private _getUsernameUrl="/getUser/";
+  private _getGuestUrl="/getGuest/";
+  private _leaveGameUrl="/leaveGame/";
+  private _changeTeamUrl="/change/";
+  private _updateProfile="/updateWithPicture";
+  private _updateProfile2="/updateWithoutPicture";
+  private _getPicure="/getPicture";
+  private _removePicture="/removePicture"
 
   createLobby(lobby:Object){
     return this.http.post<any>(this._createUrl,lobby,{

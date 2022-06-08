@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private _registerUrl="http://localhost:3000/register";
-  private _loginUrl="http://localhost:3000/login"
-  private _guestUrl="http://localhost:3000/guest"
+  private _registerUrl="/register";
+  private _loginUrl="/login"
+  private _guestUrl="/guest"
   constructor(private http:HttpClient,private router:Router) { }
   registerUser(user:object){
    

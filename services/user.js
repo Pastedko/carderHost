@@ -52,14 +52,14 @@ async function updateProfile(user, updates, file) {
                 throw new Error('Username is already in use')
         }
         myUser.username = updates.username;
-            if (myUser.profilePicture != 'http://localhost:3000/uploads/guest-user-250x250.jpg') {
+            if (myUser.profilePicture != '/uploads/guest-user-250x250.jpg') {
                 //var result = findRemoveSync('uploads', { files: myUser.profilePicture.split('uploads\\')[1] })
             }
             if(file.includes("http://localhost:3000")){
                 myUser.profilePicture=file;
             }
             else
-            myUser.profilePicture = 'http://localhost:3000/' + file;
+            myUser.profilePicture = ' /' + file;
         myUser.gender = updates.gender;
         myUser.birthday = updates.birthday | null;
         myUser.city = updates.city;
@@ -71,9 +71,9 @@ async function updateProfile(user, updates, file) {
 
 async function removePicure(user) {
     const myUser = await User.findById(user._id);
-    if (myUser.profilePicture != 'http://localhost:3000/uploads/guest-user-250x250.jpg') {
+    if (myUser.profilePicture != '/uploads/guest-user-250x250.jpg') {
         var result = findRemoveSync('uploads', { files: myUser.profilePicture.split('uploads\\')[1] });
-        myUser.profilePicture = 'http://localhost:3000/uploads/guest-user-250x250.jpg';
+        myUser.profilePicture = '/uploads/guest-user-250x250.jpg';
         myUser.save()
     }
 }

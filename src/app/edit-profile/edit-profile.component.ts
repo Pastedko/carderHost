@@ -94,8 +94,8 @@ export class EditProfileComponent implements OnInit {
    
   }
   removePicture(){
-    this.updates.profilePicture="http://localhost:3000/uploads/guest-user-250x250.jpg"
-    this.url="http://localhost:3000/uploads/guest-user-250x250.jpg";
+    this.updates.profilePicture=" /uploads/guest-user-250x250.jpg"
+    this.url=" /uploads/guest-user-250x250.jpg";
     this.removed=true;
   }
 

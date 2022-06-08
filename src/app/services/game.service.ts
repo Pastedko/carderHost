@@ -11,9 +11,9 @@ import { User } from '../user';
 })
 export class GameService {
 
-  _checkCardsUrl="http://localhost:3000/allowed";
-  _getGamesOfUser="http://localhost:3000/getUserGames"
-  _gameFinished="http://localhost:3000/gameFinished"
+  _checkCardsUrl="/allowed";
+  _getGamesOfUser="/getUserGames"
+  _gameFinished="/gameFinished"
   constructor(private http:HttpClient,private router:Router,private socket:Socket) { }
 
   isAllowed(card:any,hand:any[],game:any){
