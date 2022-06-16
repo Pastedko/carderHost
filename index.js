@@ -24,13 +24,13 @@ async function start(){
     app.use(cors());
     app.use(express.json())
     app.use(requireHTTPS);
-    app.use(express.static('./dist/<name-on-package.json>'));
+    app.use(express.static('./dist/website'));
     epxressConfig(app);
     await databaseConfig();
     routesConfig(app)
 
     app.get('/*', function(req, res) {
-        res.sendFile('index.html', {root: 'dist/<name-on-package.json>/'}
+        res.sendFile('index.html', {root: 'dist/website/'}
       );
       });
     server.listen(process.env.PORT||3000,()=>console.log('Server running on port 3000.'))
