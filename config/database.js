@@ -3,7 +3,7 @@ require('../models/User');
 //TODO add validation
 
 const dbName='cardGame';
-const connectionString=`mongodb+srv://tedox:<summer274371>@carder.jmfmx.mongodb.net/?retryWrites=true&w=majority`;
+const connectionString=`mongodb+srv://tedox:summer274371@carder.jmfmx.mongodb.net/?retryWrites=true&w=majority`;
 module.exports=async(app)=>{
     try{
     await mongoose.connect(connectionString,{
@@ -17,6 +17,7 @@ module.exports=async(app)=>{
     })
 }
 catch(err){
+    console.log(err)
     console.error('Error connection to database');
     process.exit(1);
 }
