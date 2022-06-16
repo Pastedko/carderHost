@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  socketUrl:'http://localhost:8080'
+  socketUrl:'http://carders.herokuapp.com'
 };
 
 /*
