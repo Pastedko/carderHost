@@ -7,7 +7,7 @@ let io;
 exports.socketConnection = (server) => {
     io = require('socket.io')(server, {
         cors: {
-            origin: "http://localhost:3000",
+            origin: "http://carders.herokuapp.com",
             methods: ["GET", "POST"],
             allowedHeaders: ["my-custom-header"],
             credentials: true

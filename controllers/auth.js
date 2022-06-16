@@ -8,9 +8,6 @@ const jwt=require('jsonwebtoken');
 
 const router=Router();
 
-router.get('/register',isGuest(),(req,res)=>{
-    res.render('register');
-})
 
 //TODO check form action,method,field names
 router.post('/register',async (req,res)=>{
@@ -32,9 +29,7 @@ router.post('/register',async (req,res)=>{
     }
 })
 
-router.get('/login',isGuest(),(req,res)=>{
-    res.render('login');
-})
+
 
 router.post('/login',isGuest(),async (req,res)=>{
     try{
@@ -49,7 +44,6 @@ router.post('/login',isGuest(),async (req,res)=>{
             res.status(409).send(err.message);
             const errors=mapErrors(err);
             console.error(err);
-            res.render('login',{data:{username:req.body.username},errors})
         }
 })
 
