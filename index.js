@@ -33,6 +33,6 @@ async function start(){
         res.sendFile('index.html', {root: 'dist/<name-on-package.json>/'}
       );
       });
-    server.listen(process.env.PORT||8080,()=>console.log('Server running on port 3000.'))
+    server.listen(process.env.PORT||3000,()=>console.log('Server running on port 3000.'))
 }
 module.exports={app}
