@@ -17,3 +17,6 @@ img {width:100%;}
     position: relative;
     text-align: center;
 }
+.container{
+    overflow-y: auto;
+}

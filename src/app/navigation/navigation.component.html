@@ -4,9 +4,11 @@
         <div class="[ navbar-header ]">
             <button type="button" class="[ navbar-toggle ]" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="[ sr-only ]">Toggle navigation</span>
-                <span class="[ icon-bar ]"></span>
-                <span class="[ icon-bar ]"></span>
-                <span class="[ icon-bar ]"></span>
+                <span class="[ icon-bar ]"><a *ngIf="_authService.isLogged()" href={{url}} class="[ animate ]">Profile</a></span>
+                <span class="[ icon-bar ]"><a  class="animate" href="/create">Create a lobby</a></span>
+                <span class="[ icon-bar ]"><a *ngIf="!_authService.isLogged()" class="animate" href="/register">Register</a></span>
+                <span class="[ icon-bar ]"><a *ngIf="!_authService.isLogged()" class="animate" href="/login">Login</a></span>
+                <span class="[ icon-bar ]"><a class="animate" *ngIf="_authService.isLogged()" (click)="_authService.logoutUser()" style="cursor: pointer">Logout</a></span>
             </button>
             <div class="[ animbrand ]">
                 <a class="[ navbar-brand ][ animate ]" href="/">Carder</a>
