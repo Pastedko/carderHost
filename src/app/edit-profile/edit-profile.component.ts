@@ -75,7 +75,7 @@ export class EditProfileComponent implements OnInit {
     fd.set("city",this.updates.city);
     fd.set("gender",this.updates.gender);
     fd.set("user",this.user._id);
-    if(this.selectedFile!=null&&!this.url.includes("http://localhost")){
+    if(this.selectedFile!=null&&!this.url.includes("http://carders.herokuapp.com")){
     fd.set('profilePicture',this.selectedFile);
     this._user.updateProfile(fd).subscribe(
     res=>{this.router.navigate([`/profile/${String(this.user._id)}`])},

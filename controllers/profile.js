@@ -49,7 +49,7 @@ router.post("/updateWithoutPicture",upload.fields([]),async(req,res)=>{
     }
 })
 router.get('/uploads/:id',async(req,res)=>{
-    res.sendFile(req.params.id,{root:'D:/tedko/Softuni Project/server/framework/uploads/'});
+    res.sendFile(req.params.id,{root:'./uploads'});
 })
 
 router.post('/removePicture',async(req,res)=>{
