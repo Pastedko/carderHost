@@ -57,7 +57,7 @@ exports.socketConnection = (server) => {
             io.to(String(game._id)).emit("gameStarted");
             let deck = await dealCards(game)
             gameStart(game)
-            setTimeout(() => { io.to(String(game._id)).emit("dealCards", deck) }, 5000);
+            setTimeout(() => { io.to(String(game._id)).emit("dealCards", deck) }, 4000);
         })
 
         //actual Game
@@ -73,7 +73,7 @@ exports.socketConnection = (server) => {
             let result = await changeTurn(game)
             if (result) {
                 console.log("handEnded")
-                setTimeout(() => { io.to(String(game._id)).emit('handEnded'); }, 5000);
+                setTimeout(() => { io.to(String(game._id)).emit('handEnded'); }, 4000);
                
             }
             if (result2 == "gameEnded") {
@@ -82,7 +82,7 @@ exports.socketConnection = (server) => {
                 let myGame=await gameEnd(game);
                 io.to(String(game._id)).emit("showResult",myGame.result);
                 if(myGame.finished==true){
-                    setTimeout(() => {  io.to(String(game._id)).emit("gameFinished") }, 6000);
+                    setTimeout(() => {  io.to(String(game._id)).emit("gameFinished") }, 5000);
                 }
             }
             else if(result2=="belot gameEnded"){
@@ -92,7 +92,7 @@ exports.socketConnection = (server) => {
                 let myGame=await gameEnd(game);
                 io.to(String(game._id)).emit("showResult",myGame.result);
                 if(myGame.finished==true){
-                    setTimeout(() => {  io.to(String(game._id)).emit("gameFinished") }, 6000);
+                    setTimeout(() => {  io.to(String(game._id)).emit("gameFinished") }, 5000);
                 }
             }
             else if(result2=="belot"){

@@ -618,25 +618,21 @@ button[disabled]{
 .playingCards .card.rank-a.diams .suit:after {
     content: "\2666";
     right: .3em;
-    font-size: 1%;
 }
 .playingCards.simpleCards .card.hearts .suit:after,
 .playingCards .card.rank-a.hearts .suit:after {
     content: "\2665";
     right: .25em;
-    font-size: 1%;
 }
 .playingCards.simpleCards .card.spades .suit:after,
 .playingCards .card.rank-a.spades .suit:after {
     content: "\2660";
     right: .3em;
-    font-size: 1%;
 }
 .playingCards.simpleCards .card.clubs .suit:after,
 .playingCards .card.rank-a.clubs .suit:after {
     content: "\2663";
     right: .25em;
-    font-size: 1%;
 }
 
 /*____________ smaller cards for use inside text ____________*/
