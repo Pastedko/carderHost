@@ -127,7 +127,7 @@
       </table>
         <!-- <button (click)="makeCall(6)"> Double </button> -->
       </div>
-   <div class="playerCards" [ngClass]="{highOpacity:turn,lowOpacity:!turn}">
+   <div class="playerCards" [className]="turn?'highOpacity':'lowOpacity'">
         <div class="playingCards simpleCards">
             <ul class="hand">
                 <li *ngFor="let card of hand;index as i">
