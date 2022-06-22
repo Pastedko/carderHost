@@ -235,7 +235,7 @@ else{
    let filter={_id:myGame._id}
    let updates={playedCards:myGame.playedCards,lastHandWinner:myGame.lastHandWinner}
     await Game.findOneAndUpdate(filter,updates);
-    setTimeout(async () => { await beginHand(game);}, 10);
+    setTimeout(async () => { await beginHand(game);}, 100);
     return true;
 }
 }

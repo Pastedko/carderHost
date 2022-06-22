@@ -41,7 +41,7 @@ export class LobbyComponent implements OnInit, OnDestroy {
 
     await this.updateLobby();
     await this._socket.gameHasStarted();
-    setTimeout(()=>{this.isLobbyOwner();},100);
+    setTimeout(()=>{this.isLobbyOwner();},1000);
     this.subInterval = this.interval.subscribe(() => { if (this._socket.hasUpdated == true) { this.updateLobby(); this._socket.hasUpdated = false; } if(this._socket.hasStarted==true)this.router.navigate([`game/${this.game._id}`])})
     await this.getGame();
     await this.getUser();

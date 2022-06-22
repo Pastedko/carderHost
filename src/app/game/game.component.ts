@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
   public team2Score:number=0;
   public cardPassed:boolean=true;
   public premiumsAllowed:boolean=false;
-  public interval = interval(100);
+  public interval = interval(1000);
   public call:number=-1;
   public belot:any=false;
   public positions:any[]=[];
@@ -105,7 +105,7 @@ export class GameComponent implements OnInit {
           this._socketGame.playedCard=null;
           this.isMyTurn();
           await this.getPlayerPositions();
-          setTimeout(() => { this.playedCards.splice(0,Math.floor(this.playedCards.length/4)*4);}, 1000);
+          setTimeout(() => { this.playedCards.splice(0,Math.floor(this.playedCards.length/4)*4);}, 5000);
           this._socketGame.handEnded();
         }
        
@@ -132,7 +132,7 @@ export class GameComponent implements OnInit {
           else
           this.premiumsCalled[index]=this.myCalls[this._socketGame.call];
         }
-        setTimeout(() => { this.premiumsCalled[index]=null;}, 3000);
+        setTimeout(() => { this.premiumsCalled[index]=null;}, 5000);
         this._socketGame.call=-1;
         this._socketGame.callMade();
         this.game = await this.getGame();
@@ -211,7 +211,7 @@ export class GameComponent implements OnInit {
         if(index!=-1){
           this.premiumsCalled[index]="Belot";
         }
-        setTimeout(() => { this.premiumsCalled[index]=null;this.belot=false;}, 3000);
+        setTimeout(() => { this.premiumsCalled[index]=null;this.belot=false;}, 5000);
       }
 
       //showResult
@@ -224,7 +224,7 @@ export class GameComponent implements OnInit {
           this.scoreScreen["team2"]=sub;
         };
         this.highestCall=-1;
-        setTimeout(() => { this.scoreScreen=null;}, 3000);
+        setTimeout(() => { this.scoreScreen=null;}, 5000);
         this._socketGame.showResult();
       }
 
