@@ -9,6 +9,12 @@
 
 /* card itself
 ********************************************************************/
+.highOpacity{
+    opacity: 1;
+}
+.lowOpacity{
+    opacity:0.4;
+}
 .gameEnded button{
     position: fixed;
     left:45%;
@@ -216,6 +222,7 @@ button[disabled]{
     position:fixed;
     bottom: 0px;
     left: 43%;
+    opacity: 30%;
     /* bring your own prefixes */
     transform: translate(-50%);
 }

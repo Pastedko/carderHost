@@ -21,8 +21,7 @@ export class NavigationComponent implements OnInit {
   subInterval: any;
   routeSub: any;
   async ngOnInit(): Promise<void> {
-    
-    setTimeout(async () => {  await this.getUser();}, 4000);
+    setTimeout(async () => {  await this.getUser();}, 3000);
   }
   async getUser(){
     let user;
