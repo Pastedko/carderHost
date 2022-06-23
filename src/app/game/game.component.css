@@ -11,9 +11,19 @@
 ********************************************************************/
 .highOpacity{
     opacity: 1;
+   position:fixed;
+    bottom: 36%;
+    left: 53%;
+    /* bring your own prefixes */
+    transform: translate(-50%);
 }
 .lowOpacity{
     opacity:0.4;
+   position:fixed;
+    bottom: 36%;
+    left: 53%;
+    /* bring your own prefixes */
+    transform: translate(-50%);
 }
 .gameEnded button{
     position: fixed;
