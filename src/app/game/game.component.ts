@@ -415,7 +415,7 @@ export class GameComponent implements OnInit {
     else return false;
   }
   async playCard(index:number){
-    if(this.turn){
+    if(this.turn&&!this.callActive){
       let card=this.hand[index];
       let res=await this._game.isAllowed(card,this.hand,this.game).toPromise();
       if(res){
