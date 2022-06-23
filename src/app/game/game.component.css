@@ -15,7 +15,6 @@
     position:fixed;
     bottom: 0px;
     left: 43%;
-    opacity: 30%;
     /* bring your own prefixes */
     transform: translate(-50%);
 }
@@ -25,7 +24,6 @@
     position:fixed;
     bottom: 0px;
     left: 43%;
-    opacity: 30%;
     /* bring your own prefixes */
     transform: translate(-50%);
 }
