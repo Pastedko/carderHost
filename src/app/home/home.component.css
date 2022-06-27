@@ -20,3 +20,6 @@ img {width:100%;}
 .container{
     overflow-y: auto;
 }
+.car-image-block{
+    size: 30%;
+}
