@@ -11,9 +11,21 @@
 ********************************************************************/
 .highOpacity{
     opacity: 1;
+    align-items: center;
+    position:fixed;
+    bottom: 0px;
+    left: 43%;
+    /* bring your own prefixes */
+    transform: translate(-50%);
 }
 .lowOpacity{
     opacity:0.4;
+    align-items: center;
+    position:fixed;
+    bottom: 0px;
+    left: 43%;
+    /* bring your own prefixes */
+    transform: translate(-50%);
 }
 .gameEnded button{
     position: fixed;
@@ -846,6 +858,7 @@ button[disabled]{
 .playingCards ul.deck li:nth-child(31) { left: 60px; bottom: 30px; }
 .playingCards ul.deck li:nth-child(32) { left: 62px; bottom: 31px; }
 
+
 .playingCards.simpleCards .card .suit:after,
 .playingCards .card.rank-j .suit:after,
 .playingCards .card.rank-q .suit:after,
@@ -854,3 +867,4 @@ button[disabled]{
 .playingCards .card.joker .rank:after {
     font-size: 3.6rem;
 }
+
