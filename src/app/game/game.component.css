@@ -329,12 +329,12 @@ button[disabled]{
 .playingCards .card .rank,
 .playingCards .card .suit {
     display: block;
-    line-height: 0.7;
+    line-height: 1;
     text-align: left;
 }
 .playingCards .card .rank,
 .playingCards .card .suit {
-    line-height: .4;
+    line-height: .7;
 }
 
 /* checkbox */
@@ -859,7 +859,7 @@ button[disabled]{
 .playingCards ul.deck li:nth-child(32) { left: 62px; bottom: 31px; }
 
 
-/*.playingCards.simpleCards .card .suit:after,
+.playingCards.simpleCards .card .suit:after,
 .playingCards .card.rank-j .suit:after,
 .playingCards .card.rank-q .suit:after,
 .playingCards .card.rank-k .suit:after,
@@ -867,5 +867,4 @@ button[disabled]{
 .playingCards .card.joker .rank:after {
     font-size: 3.6rem;
 }
-*/
 
