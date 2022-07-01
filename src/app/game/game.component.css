@@ -250,7 +250,7 @@ button[disabled]{
     padding: .25em;
     margin: 0 .5em .5em 0;
     text-align: center;
-    font-size: 2.5em; /* @change: adjust this value to make bigger or smaller cards */
+    font-size: 2.3em; /* @change: adjust this value to make bigger or smaller cards */
     font-weight: normal;
     font-family: Arial, sans-serif;
     position: relative;
@@ -329,12 +329,12 @@ button[disabled]{
 .playingCards .card .rank,
 .playingCards .card .suit {
     display: block;
-    line-height: 0.9;
+    line-height: 1.5;
     text-align: left;
 }
 .playingCards .card .rank,
 .playingCards .card .suit {
-    line-height: .6;
+    line-height: 1;
 }
 
 /* checkbox */
