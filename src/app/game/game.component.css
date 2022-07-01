@@ -329,12 +329,12 @@ button[disabled]{
 .playingCards .card .rank,
 .playingCards .card .suit {
     display: block;
-    line-height: 1;
+    line-height: 0.9;
     text-align: left;
 }
 .playingCards .card .rank,
 .playingCards .card .suit {
-    line-height: .7;
+    line-height: .6;
 }
 
 /* checkbox */
