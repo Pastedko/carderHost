@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
   public team2Score:number=0;
   public cardPassed:boolean=true;
   public premiumsAllowed:boolean=false;
-  public interval = interval(100);
+  public interval = interval(1000);
   public call:number=-1;
   public belot:any=false;
   public positions:any[]=[];
