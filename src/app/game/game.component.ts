@@ -419,6 +419,7 @@ export class GameComponent implements OnInit {
       let card=this.hand[index];
       let res=await this._game.isAllowed(card,this.hand,this.game).toPromise();
       if(res){
+        if(this.playedCards.length<4){
         if(this.checkBelot(card)==true){
           card.belot=true;
         }
@@ -429,6 +430,7 @@ export class GameComponent implements OnInit {
           console.log("1")
         this.sendCards()
         }
+      }
     }}
   }
   sortHand(){
