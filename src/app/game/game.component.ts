@@ -105,7 +105,7 @@ export class GameComponent implements OnInit {
           this._socketGame.playedCard=null;
           this.isMyTurn();
           await this.getPlayerPositions();
-          setTimeout(() => { this.playedCards.splice(0,Math.floor(this.playedCards.length/4)*4);}, 4000);
+          setTimeout(() => { this.playedCards.splice(0,Math.floor(this.playedCards.length/4)*4);}, 2000);
           this._socketGame.handEnded();
         }
        
@@ -426,10 +426,7 @@ export class GameComponent implements OnInit {
         this._socketGame.playCard(card,this.hand,this.game);
         this.hand.splice(index,1)
         this.cardPassed=true;
-        if(this.deck.length!=0){
-          console.log("1")
-        this.sendCards()
-        }
+        this.sendCards();
       }
     }}
   }
