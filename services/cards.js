@@ -275,7 +275,6 @@ async function updateCards(player,cards,game){
     let myGame = await Game.findById(game._id);
     let index=-1;
     myGame.players.forEach((el,i)=>{
-
         if(el[0]==player||JSON.stringify(el[0])==JSON.stringify(player))index=i;
     })
     if(index!=-1){
