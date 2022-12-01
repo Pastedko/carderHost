@@ -1,25 +1,86 @@
-img {width:20%;}
-.car-image-block {padding:0px;margin:0px;}
-.car-image-block img { overflow: hidden;}
 
-.cars-horizon{
-    position: fixed;
-    top: 150px;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+@media(max-width:1000px){
+    img {width:100%;height: 100%;}
+.car-image-block {padding:0px;margin:0px;position: relative;left:0;height: 25%;width:50%;}
+    .cars-horizon{
+        position: absolute;
+        top: 150px;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .cars-horizon p{
+        font-size: 10%;
+        color: red;
+        text-align: center;
+        left: 0px;
+        margin-left: 0px;
+    }
+    .card-body{
+        position: absolute;
+        text-align: center;
+        left: 55%;
+        top:13%;
+        padding: 0px;
+        width: 30%;
+        height: 15%;
+        margin-top: 0%;
+        font-size: 100%;
+    }
+    
+    .card-body h3{
+        margin-top: 0px !important;
+        font-size: 150%;
+    }
+    .container{
+        position: relative;
+        top: 0%;
+        left: 5%;
+        height: 100%;
+        width: 100%;
+     
 }
-.cars-horizon p{
-    font-size: 625%;
-    color: red;
-    position: relative;
-    text-align: center;
 }
-.container{
-    overflow-y: auto;
-}
-.car-image-block{
-    size: 30%;
-}
+ @media(min-width:1001px){
+    img {width:100%;height: 100%;}
+    .car-image-block {padding:0px;margin:0px;position: relative;left:0;height: 25%;width:20%;}
+        .cars-horizon{
+            position: absolute;
+            top: 150px;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .cars-horizon p{
+            font-size: 10%;
+            color: red;
+            text-align: center;
+            left: 0px;
+            margin-left: 0px;
+        }
+        .card-body{
+            position: absolute;
+            text-align: center;
+            left: 30%;
+            top:13%;
+            padding: 0px;
+            width: 25%;
+            height: 15%;
+            margin-top: 3%;
+        }
+        
+        .card-body h3{
+            margin-top: 0px !important;
+            font-size: 150%;
+        }
+        .container{
+            position: relative;
+            top: 0%;
+            left: 5%;
+            height: 100%;
+            width: 100%;
+         
+    }
+ }
