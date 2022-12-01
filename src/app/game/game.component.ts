@@ -418,6 +418,7 @@ export class GameComponent implements OnInit {
     if(this.turn&&!this.callActive){
       let card=this.hand[index];
       let res=await this._game.isAllowed(card,this.hand,this.game).toPromise();
+      setTimeout(()=>{},100);
       if(res){
         if(this.playedCards.length<4){
         if(this.checkBelot(card)==true){
@@ -426,6 +427,7 @@ export class GameComponent implements OnInit {
         this._socketGame.playCard(card,this.hand,this.game);
         this.hand.splice(index,1)
         this.cardPassed=true;
+        this.turn=false;
         this.sendCards();
       }
     }}
